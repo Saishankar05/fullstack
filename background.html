@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>Alert</title>
+</head>
+<script>
+	var colors=["orange","blue","green"];
+	var colorsIndex=0;
+	function changecolor()
+	{
+		var col=document.getElementById("body");
+		if(colorsIndex >= colors.length)
+		{
+			colorIndex=0;
+		}
+		col.style.backgroundColor=colors[colorsIndex];
+		colorsIndex++;
+	}
+</script>
+<body id="body">
+	<button onclick="changecolor()">Change color</button>
+</body>
+</html>
+	

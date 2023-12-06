@@ -1,0 +1,78 @@
+<html>
+    <script>
+        var prev,oper;
+        function nums(s)
+        {
+            var sum=0;
+            var n=parseInt(document.f1.t1.value);
+            sum=(n*10)+s;
+            document.f1.t1.value=sum;
+        }
+        function op(k)
+        {
+            oper=k;
+            prev=parseInt(document.f1.t1.value);
+            document.f1.t1.value=0;
+        }
+        function remove()
+        {
+            a=parseInt(document.f1.t1.value);
+            b=Math.floor(a/10);
+            document.f1.t1.value=b;
+        }
+        function eq()
+        {
+            curr=parseInt(document.f1.t1.value);
+            switch(oper)
+            {
+                case 1: var result=prev+oper;break;
+                case 2: var result=prev-oper;break;
+                case 3: var result=prev*oper;break;
+                case 4: var result=prev/oper;break;
+                case 5: var result=prev%oper;break;
+            }
+            document.f1.t1.value=result;
+        }
+    </script>
+    <body>
+        <form name="f1">
+            <table align="center" cellspacing="10" cellpadding="20">
+
+                <tr>
+                    <td colspan="4"><input type="text" value="0" name="t1" size="50"></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="1" onclick="nums(1)"></td>
+                    <td><input type="button" value="2" onclick="nums(2)"></td>
+                    <td><input type="button" value="3" onclick="nums(3)"></td>
+                    <td><input type="button" value="+" onclick="op(1)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" onclick="nums(4)"></td>
+                    <td><input type="button" value="5" onclick="nums(5)"></td>
+                    <td><input type="button" value="6" onclick="nums(6)"></td>
+                    <td><input type="button" value="*" onclick="op(2)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="7" onclick="nums(7)"></td>
+                    <td><input type="button" value="8" onclick="nums(8)"></td>
+                    <td><input type="button" value="9" onclick="nums(8)"></td>
+                    <td><input type="button" value="+" onclick="op(3)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="0" onclick="nums(0)"></td>
+                    <td><input type="button" value="/" onclick="op(4)"></td>
+                    <td><input type="button" value="%" onclick="op(5)"></td>
+                    <td><input type="button" value="=" onclick="eq()"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="reset" value="RESET"></td>
+                    <td><input type="button" value= "<----" onclick="mod()"></td>
+                </tr>
+
+            </table>
+
+        </form>
+    </body>
+</html>
